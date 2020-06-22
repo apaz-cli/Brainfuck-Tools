@@ -45,7 +45,7 @@ int main() {
 		--ptr;
 		--ptr;
 		--*ptr;
-		}
+	}
 	++ptr;
 	++*ptr;
 	++*ptr;

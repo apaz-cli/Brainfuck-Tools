@@ -119,10 +119,10 @@ void writeC(char *program, char *cPath) {
                 tabs++;
                 break;
             case ']':
+                tabs--;
                 instruction = tabIn(tabs, "}\n");
                 fputs(instruction, f);
                 free(instruction);
-                tabs--;
                 break;
             case '.':
                 instruction = tabIn(tabs, "putchar(*ptr);\n");
@@ -157,7 +157,7 @@ void compileC(char *cPath, char *bfPath) {
         cmdloc += lens[i];
     }
     commandstr[totalsize] = '\0';
-    
+
     system(commandstr);
 
     free(commandstr);
